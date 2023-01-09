@@ -31,7 +31,7 @@
     </div>
     </div>
     <div class="d-grid gap-2">
-   <button class="btn btn-primary" type="button">Cliquez-ici</button>
+   <button class="btn btn-primary" type="button">Commencer à jouer</button>
    </div>
   </body>
 </html>
