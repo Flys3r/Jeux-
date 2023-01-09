@@ -14,7 +14,7 @@ if(!isset($_SESSION['cptJoueur']) && !isset($_SESSION['cptOrdi']) && !isset($_SE
  
  
 echo '<div style="border:solid black; width:13%; align:center;margin-left: auto;margin-right:auto;"';
-
+echo 'Compteur de points : <br>';
  
 if(isset($_POST['choix'])):
     if ($_POST['choix'] == $tirageOrdi[0]){
@@ -72,6 +72,7 @@ echo '</div>';
 
 
 ?>
+
 
 
 
