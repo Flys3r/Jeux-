@@ -1,6 +1,12 @@
 body{
     background-color: rgb(67, 201, 231);
 }
+
+.idf {
+  background-image: url("./image de fond.png");
+  background-size: 100em 45em;
+}
+
 h1{
     display: flex;
     color: rgb(255, 255, 255);
