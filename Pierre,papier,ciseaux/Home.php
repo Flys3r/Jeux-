@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./stylee.css">
     <title>Shifumi</title>
   </head>
-  <body>
+  <bodyclass="idf">
   <h1>BIENVENUE</h1>
   <img src="./image/shifumi.jpg" alt="shifumi">
     <div>
