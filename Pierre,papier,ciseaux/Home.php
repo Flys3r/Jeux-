@@ -1,17 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>   
+<head>   
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="./stylee.css">
     <title>Shifumi</title>
-  </head>
-  <bodyclass="idf">
-  <h1>BIENVENUE</h1>
-  <img src="./image/shifumi.jpg" alt="shifumi">
-    <div>
+</head>
+<bodyclass="idf">
+   <h1>BIENVENUE</h1>
+   <img src="./image/shifumi.jpg" alt="shifumi">
+   <form>
+        <div class="form-group">
+         <label for="Name">Name</label>
+         <input type="Name" class="form-control" id="Name" aria-describedby="NameHelp" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+         <label for="Surname">Surname</label>
+         <input type="Surname" class="form-control" id="Name" placeholder="Enter Surname">
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmer</button>
+    </form>
+   <div>
     <div class="accordion" id="accordionExample">
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
@@ -31,7 +42,7 @@
     </div>
     </div>
     <div class="d-grid gap-2">
-   <button class="btn btn-primary" type="button">Commencer à jouer</button>
-   </div>
+     <button class="btn btn-primary" type="button">Commencer à jouer</button>
+    </div>
   </body>
 </html>
