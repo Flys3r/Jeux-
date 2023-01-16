@@ -5,9 +5,9 @@ $dbh = new PDO('mysql:host=localhost;dbname=shifumi','root', '',$options);
 
 $sth = $dbh->prepare("SELECT * FROM utilisateur");  
 $sth->execute();
-$shifumi = $sth->fetchAll();
+$shifumie = $sth->fetchAll();
 
-foreach($groupes as $groupe){
+foreach($shifumie as $shifumi){
     echo "<p>",$shifumi ['nom'],"</p>";
     echo "<p>",$shifumi ['date'],"</p>";
     echo "<p>",$shifumi ['nbr_victoire'],"</p>";
