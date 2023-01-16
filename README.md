@@ -9,6 +9,6 @@ Pour commencer les joueurs comptent jusqu'à trois en mettant la main dans le do
 
 Contexte (ecole, personnes, avec qui, etc) 
 
-Dans le cadre d'un travail de groupe, nous avons un objectif de créer un site web permettant de jouer à Shifumi. Pour ce faire, nous avons réaliser une conception web fonctionnel et de qualité.
+Dans le cadre d'un travail de groupe, nous avons un objectif de créer un site web permettant de jouer à Shifumi. Pour ce faire, nous avons réaliser une conception web fonctionnel en utilisant diffèrents languages informatiques (PhP, HTML, CSS, MYSQL). 
 
 Comment installer ce projets
