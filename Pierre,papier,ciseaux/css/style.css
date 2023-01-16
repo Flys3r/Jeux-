@@ -3,12 +3,6 @@ body{
     background-size: 100%;
 
 }
-h1{
-    color: rgb(0, 0, 0);
-    text-align: center;
-    display: flex; 
-
-}
 header{
     color: aliceblue;
     margin: 1em;
