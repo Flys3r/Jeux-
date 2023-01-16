@@ -1,3 +1,4 @@
+<?php
 $options = [
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"];
 $dbh = new PDO('mysql:host=localhost;dbname=shifumi','root', '',$options);
@@ -15,3 +16,4 @@ foreach($groupes as $groupe){
     echo "<img src='",$shifumi ['image'],"'/>";
     
 }
+?>
