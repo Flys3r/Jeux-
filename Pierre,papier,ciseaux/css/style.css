@@ -1,13 +1,31 @@
 body{
-    background-color: rgb(67, 201, 231);
-}
+    background-image: url(./image/coucher-lever-soleil-dans-ocean-paysage-naturel_33099-2244.png);
+    background-size: 100%;
 
-.idf {
-  background-image: url("./image de fond.png");
-  background-size: 100em 45em;
 }
-
 h1{
-    display: flex;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: flex; 
+
 }
+header{
+    color: aliceblue;
+    margin: 1em;
+}
+nav{
+    margin: 2em;
+}
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(85, 181, 185);
+    color: white;
+  }
