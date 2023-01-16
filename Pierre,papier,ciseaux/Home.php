@@ -64,8 +64,7 @@
       <div>
           <form action="formulaire.php" method="POST"> 
           <label for="nom"> Nom : </label><input type="text" name="nom" id="nom" placeholder="Entrez votre nom" /><br/><br/>
-          <label for="adresse"> Adresse IP : </label><input type="text" name="adresse IP" id="adresse IP" placeholder="Votre adresse IP" /><br/><br/>
-          <label for="date"> date : </label><input type="text" name="date" id="date" placeholder="date" /><br/><br/>
+          <label for="adresse"> Adresse IP : </label><input type="text" name="adresse IP" id="adresse IP" placeholder="Votre adresse IP" /><br/><br/
          <label for="photo"> Photo : </label><input type="text" name="photo" id="photo" placeholder="Mettre  une photo" /><br/><br/>      
       </div>
     </div>
