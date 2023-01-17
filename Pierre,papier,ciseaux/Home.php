@@ -1,3 +1,7 @@
+
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>   
@@ -12,17 +16,17 @@
     <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-      <a class="navbar-brand" href="#">Acceuil</a>
+      <a class="navbar-brand" href="index.php">Acceuil</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Tableau de score</a>
+          <a class="nav-link active" aria-current="page" href="#">tableau de score</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Jouer</a>
+          <a class="nav-link active" aria-current="page" href="game.php">jouer</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -61,10 +65,11 @@
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
     <div class="accordion-body">
       <div>
-          <form action="formulaire.php" method="POST"> 
-          <label for="nom"> Nom : </label><input type="text" name="nom" id="nom" placeholder="Entrez votre nom" /><br/><br/>
-          <label for="adresse"> Adresse IP : </label><input type="text" name="adresse IP" id="adresse IP" placeholder="Votre adresse IP" /><br/><br/
-         <label for="photo"> Photo : </label><input type="text" name="photo" id="photo" placeholder="Mettre  une photo" /><br/><br/>      
+          <form action="#" method="POST"> 
+          <label for="nom"> Nom : </label><input type="text" name="nom" id="" required ,placeholder="Entrez votre nom" /><br/><br/>
+          <label for="adresse"> Adresse IP : </label><input type="text" name="adresseIP" id="" required placeholder="Votre adresse IP" /><br/><br/>
+          <input type="submit" value="creer">
+        </form>     
       </div>
     </div>
   </div>
@@ -77,3 +82,17 @@
   </div>
     </body>
 </html>
+<?php
+// TODO : Externaliser ces variables dans un autre fichier.
+// Connection à la BDD
+$hostname = 'localhost:3307';
+$dbname = 'shifumi';
+$dbuser = 'root';
+$dbpass = 'root';
+$dbh = new PDO("mysql:host=$hostname;dbname=$dbname", $dbuser, $dbpass);
+// Lecture des articles au sein de la BDD
+$sth = $dbh->prepare("INSERT INTO `utilisateur` (`nom`, `adresseIP`) VALUES (:nom,:adresseIP);");
+$is = $sth->execute(['nom' => $_POST['nom'], 'adresseIP' => $_POST['adresseIP']  ]);
+if ($is)
+  echo "Enregistrement reussi";
+?>
