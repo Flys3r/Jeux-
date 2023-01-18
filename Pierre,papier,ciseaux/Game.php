@@ -21,10 +21,10 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">acceuill</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Acceuill</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">tableau de score</a>
+          <a class="nav-link" href="#">Tableau de score</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
