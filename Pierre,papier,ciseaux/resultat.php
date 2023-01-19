@@ -1,19 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <head>   
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
-   <title>SHIFUMI</title>
-   <link rel="stylesheet" href="./stylee.css"> 
-  </head> 
+    <link rel="stylesheet" href="./stylee.css">
+    <title>SHIFUMI</title>
+  </head>
   <body>
     <header> 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="game.php">Tableau des score</a>
+    <a class="navbar-brand" href="game.php">Jeux</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,7 +22,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Jeux</a>
+          <a class="nav-link" href="resultat.php">Tableau de score</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -34,24 +33,24 @@
   </div>
 </nav>
 </header>
-</body>
+  </body>
 </html>
 <?php
-$options = [
-    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"];
-$dbh = new PDO('mysql:host=localhost;dbname=shifumi','root', '',$options);
-
+$hostname = 'localhost:3307';
+$dbname = 'shifumi';
+$dbuser = 'root';
+$dbpass = 'root';
+$dbh = new PDO("mysql:host=$hostname;dbname=$dbname", $dbuser, $dbpass);
 $sth = $dbh->prepare("SELECT * FROM utilisateur");  
 $sth->execute();
 $shifumie = $sth->fetchAll();
-
+echo '<div style="border:solide; width:13%; align:center;margin-left: auto;margin-right:auto;">';
 foreach($shifumie as $shifumi){
     echo "<p>",$shifumi ['nom'],"</p>";
     echo "<p>",$shifumi ['date'],"</p>";
     echo "<p>",$shifumi ['nbr_victoire'],"</p>";
     echo "<p>",$shifumi ['nbr_partie'],"</p>";
     echo "<p>",$shifumi ['egalite'],"</p>";
-   
-    
+    echo '<div style =" border: 1px solide black;">';  
 }
 ?>
