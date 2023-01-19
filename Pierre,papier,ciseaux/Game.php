@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +20,14 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Acceuill</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tableau de score</a>
+          <a class="nav-link" href="resultat.php">Tableau de score</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" role="recherche">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="recherche">
         <button class="btn btn-outline-success" type="submit">recherche</button>
       </form>
     </div>
@@ -90,11 +89,12 @@ if(isset($_POST['choix'])):
 endif;
 echo '<form method="post" action="">';
 foreach ($tirageJoueur as $valeur) {
-    echo "<input type='radio' id='$valeur' name='choix' value='$valeur' required> <label for='$valeur'> $valeur </label> <br>";
+echo "<input type='radio' id='$valeur' name='choix' value='$valeur' required> <label for='$valeur'> $valeur </label> <br>";
 }
 echo '<br><input type="submit">';
 echo '</form>';   
 echo '</div>';
+?>
 
 
 
