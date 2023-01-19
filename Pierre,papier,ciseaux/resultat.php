@@ -50,7 +50,6 @@ foreach($shifumie as $shifumi){
     echo "<p>",$shifumi ['date'],"</p>";
     echo "<p>",$shifumi ['nbr_victoire'],"</p>";
     echo "<p>",$shifumi ['nbr_partie'],"</p>";
-    echo "<p>",$shifumi ['egalite'],"</p>";
-    echo '<div style =" border: 1px solide black;">';  
+    echo "<p>",$shifumi ['egalite'],"</p>";  
 }
 ?>
