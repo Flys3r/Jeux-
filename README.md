@@ -10,7 +10,7 @@ Maintenant je vais vous présenter les membres qui composent notre groupe : DUVA
 
 Contexte :
 
-Le projet devait être réalisé par groupes. Le projet consiste à réaliser un jeu shifumi, une interface web permettant de jouer à Pierre Feuille Ciseaux contre un ordinateur. Nous avons comme projet de créer une interface du jeu shifumi en groupe. L'objectif est de créer un site web permettant de jouer à Shifumi. Pour ce faire, nous avons réalisé une conception web fonctionnel en utilisant différents langages informatiques (PhP, HTML, CSS, MYSQL) et des freemwork.
+Le projet devait être réalisé par groupes. Le projet consiste à réaliser un jeu shifumi, une interface web permettant de jouer à Pierre Feuille Ciseaux contre un ordinateur. Nous avons comme projet de créer une interface du jeu shifumi en groupe. Pour ce faire, nous avons réalisé une conception web fonctionnel en utilisant différents langages informatiques (PhP, HTML, CSS, MYSQL) et des freemwork.
 
 Au cours de ce projet, nous sommes repartir les taches de différentes façons avec Mr DUVAL qui nous occupait de faire la logique du jeu en Php. Mr NAILANI qui lui s'occuper de la forme et du style des différentes pages avec comme outils HTML CSS et bootstrap. Mr GENDROT était le couteau suisse qui touchaient à tous (PHP, HTML et CSS) pour aider les 2 autres membres du groupe .
 
