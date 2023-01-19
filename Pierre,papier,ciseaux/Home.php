@@ -1,7 +1,3 @@
-
-<?php
-session_start();
-?>
 <!doctype html>
 <html lang="en">
   <head>   
@@ -12,39 +8,38 @@ session_start();
     <link rel="stylesheet" href="./stylee.css">
     <title>SHIFUMI</title>
   </head>
-  <body>
+<body>
     <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
       <a class="navbar-brand" href="index.php">Acceuil</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Tableau de score</a>
+          <a class="nav-link active" aria-current="page" href="resultat.php">Tableau de score</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="game.php">Jouer</a>
+          <a class="nav-link active" aria-current="page" href="game.php">Jeux</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">recherche</button>
-      </form>
+        <form class="d-flex" role="search">
+         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success" type="submit">recherche</button>
+        </form>
       </div>
     </div>
   </nav>
-
       <nav>
-      <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+       <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         REGLES DE JEU
-      </button>
-    </h2>
+        </button>
+       </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
       <strong>Pierre-feuille-ciseaux</strong> est un jeu qui se joue avec les mains et avec deux joueurs. Chacun des joueurs met une main dans le dos et va choisir un des coups possibles <strong>(pierre, feuille ou ciseaux)</strong> et le symboliser avec sa main toujours dans son dos. Pour le coup <strong>pierre</strong> le joueur ferme le poing. Pour le coup <strong>feuille</strong> il met sa main à plat. Et pour le dernier coup possible le <strong>ciseaux</strong> le joueur écarte ses deux doigts. Les deux joueurs révèlent ensuite leur main et donc le coup qu’ils décident de jouer simultanément. De façon générale : 
@@ -65,11 +60,11 @@ session_start();
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
     <div class="accordion-body">
       <div>
-          <form action="#" method="POST"> 
-          <label for="nom"> Nom : </label><input type="text" name="nom" id="" required ,placeholder="Entrez votre nom" /><br/><br/>
-          <label for="adresse"> Adresse IP : </label><input type="text" name="adresseIP" id="" required placeholder="Votre adresse IP" /><br/><br/>
-          <input type="submit" value="creer">
-        </form>     
+         <form action="#" method="POST"> 
+           <label for="nom"> Nom : </label><input type="text" name="nom" id="" required ,placeholder="Entrez votre nom" /><br/><br/>
+           <label for="adresse"> Adresse IP : </label><input type="text" name="adresseIP" id="" required placeholder="Votre adresse IP" /><br/><br/>
+           <input type="submit" value="creer">
+         </form>     
       </div>
     </div>
   </div>
@@ -80,7 +75,7 @@ session_start();
     <button class="btn btn-light" type="button">
     <a href="game.php">JOUER</a></button>
   </div>
-    </body>
+</body>
 </html>
 <?php
 // TODO : Externaliser ces variables dans un autre fichier.
@@ -92,7 +87,10 @@ $dbpass = 'root';
 $dbh = new PDO("mysql:host=$hostname;dbname=$dbname", $dbuser, $dbpass);
 // Lecture des articles au sein de la BDD
 $sth = $dbh->prepare("INSERT INTO `utilisateur` (`nom`, `adresseIP`) VALUES (:nom,:adresseIP);");
-$is = $sth->execute(['nom' => $_POST['nom'], 'adresseIP' => $_POST['adresseIP']  ]);
-if ($is)
+$is = $sth->execute(['nom' => $_POST['nom'], 'adresseIP' => $_POST['adresseIP'] ]);
+ if ($is)
   echo "Enregistrement reussi";
+  $selectLast = $dbh->query('SELECT id FROM utilisateur ORDER BY id DESC LIMIT 0, 1');
+$lastId = $selectLast->fetch();       
+echo $lastId['id']; // $lastId['id'] cette variable contient le dernier id<br>
 ?>
