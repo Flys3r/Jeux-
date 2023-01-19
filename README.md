@@ -12,6 +12,6 @@ Contexte :
 
 Le projet devait être réalisé par groupes. Le projet consiste à réaliser un jeu shifumi, une interface web permettant de jouer à Pierre Feuille Ciseaux contre un ordinateur. Nous avons comme projet de créer une interface du jeu shifumi en groupe. L'objectif est de créer un site web permettant de jouer à Shifumi. Pour ce faire, nous avons réalisé une conception web fonctionnel en utilisant différents langages informatiques (PhP, HTML, CSS, MYSQL) et des freemwork.
 
-Au cours de ce projet, nous sommes repartir les taches de différentes façons avec Mr DUVAL qui nous occupait de faire la logique du jeu en Php. Mr NAILANI qui lui s'occuper de la forme et du style des différentes pages avec comme outils HTML CSS et bootstrap. Mr GENDROT était le couteau suisse qui aidait les 2 qui touchaient à tout au PHP, HTML et CSS.
+Au cours de ce projet, nous sommes repartir les taches de différentes façons avec Mr DUVAL qui nous occupait de faire la logique du jeu en Php. Mr NAILANI qui lui s'occuper de la forme et du style des différentes pages avec comme outils HTML CSS et bootstrap. Mr GENDROT était le couteau suisse qui aidait les 2 autres membres qui touchaient à tous (PHP, HTML et CSS).
 
 Pour finir, il nous fallait une base de données pour pouvoir stocker plusieurs données ( le taux de réussite d'un visiteur, son adresse IP, le nombre de tours joués ainsi que le timestamp (date et heure de création)). Cette étape était la plus compliquée à réaliser. il a éte fait par l'ensemble du groupe même si le code n'était pas parfait .
