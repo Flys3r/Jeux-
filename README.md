@@ -15,3 +15,12 @@ Le projet devait être réalisé par groupes. Le projet consiste à réaliser un
 Au cours de ce projet, nous sommes repartir les taches de différentes façons avec Mr DUVAL qui nous occupait de faire la logique du jeu en Php. Mr NAILANI qui lui s'occuper de la forme et du style des différentes pages avec comme outils HTML CSS et bootstrap. Mr GENDROT était le couteau suisse qui touchaient à tous les types de langages pour aider les 2 autres membres du groupe .
 
 Pour finir, il nous fallait une base de données pour pouvoir stocker plusieurs données ( le taux de réussite d'un visiteur, son adresse IP, le nombre de tours joués ainsi que le timestamp (date et heure de création)). Cette étape était la plus compliquée à réaliser. il a éte fait par l'ensemble du groupe même si le code n'était pas parfait .
+
+
+#Installation #
+
+1.Installer les fichiers 
+
+2.Importer le fichier sql dans votre base de données
+
+3.Mettre votre connexion de votre base de données
