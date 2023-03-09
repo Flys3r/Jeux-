@@ -45,10 +45,7 @@ session_start();
 <?php
 session_start();
 
-if (!isset($_SESSION['last_players_choice'])) {
-  $_SESSION['last_players_choice'] = [];
-}
-
+// Initialisation des compteurs
 if (!isset($_SESSION['cptJoueur'])) {
   $_SESSION['cptJoueur'] = 0;
 }
@@ -59,14 +56,22 @@ if (!isset($_SESSION['cptEgalite'])) {
   $_SESSION['cptEgalite'] = 0;
 }
 
+// Initialisation du tableau des choix du joueur
+if (!isset($_SESSION['last_players_choice'])) {
+  $_SESSION['last_players_choice'] = [];
+}
+
+// Initialisation du tour
 if (!isset($_SESSION['tour'])) {
   $_SESSION['tour'] = 1;
 }
 $turn = $_SESSION['tour'];
 
+// Tirage aléatoire des choix du joueur
 $tirageJoueur = ['Pierre', 'Feuille', 'Ciseaux'];
 shuffle($tirageJoueur);
 
+// Fonction pour sauvegarder le dernier choix du joueur dans le tableau
 function save_last_players_choice($choice)
 {
   $array = $_SESSION['last_players_choice'];
@@ -77,6 +82,7 @@ function save_last_players_choice($choice)
   $_SESSION['last_players_choice'] = $array;
 }
 
+// Fonction pour déterminer le choix de Hal
 function hals_choice()
 {
   global $turn, $tirageJoueur;
@@ -104,54 +110,60 @@ function hals_choice()
   }
   return $hals_choice;
 }
+
+// Traitement du choix du joueur
 if (isset($_POST['choix'])) {
-    $last_choice = end($_SESSION['last_players_choice']);
-    $hals_choice = hals_choice();
-    $player_choice = $_POST['choix'];
-    save_last_players_choice($player_choice);
-    echo 'Vous avez choisi : <b>' . $player_choice . '</b><br>';
-    echo 'Hal a choisi : <b>' . $hals_choice . '</b><br>';
-    if ($player_choice == $hals_choice) {
-      echo "Egalité !<br>";
-      $_SESSION['cptEgalite']++;
-    } elseif ($hals_choice == 'Feuille' && $player_choice == 'Pierre' || $hals_choice == 'Ciseaux' && $player_choice == 'Feuille' || $hals_choice == 'Pierre' && $player_choice == 'Ciseaux') {
-      echo "Perdu !<br>";
-      $_SESSION['cptOrdi']++;
-    } else {
-      echo "Gagné !<br>";
-      $_SESSION['cptJoueur']++;
-    }
-    $_SESSION['tour']++;
+  $player_choice = $_POST['choix'];
+  save_last_players_choice($player_choice);
+  $last_choice = end($_SESSION['last_players_choice']);
+  $hals_choice = hals_choice();
+  echo 'Vous avez choisi : <b>' . $player_choice . '</b><br>';
+  echo 'Hal a choisi : <b>' . $hals_choice . '</b><br>';
+  if ($player_choice == $hals_choice) {
+    echo "Egalité !<br>";
+    $_SESSION['cptEgalite']++;
+  } elseif ($hals_choice == 'Feuille' && $player_choice == 'Pierre' || $hals_choice == 'Ciseaux' && $player_choice == 'Feuille' || $hals_choice == 'Pierre' && $player_choice == 'Ciseaux') {
+    echo "Perdu !<br>";
+    $_SESSION['cptOrdi']++;
+  } else {
+    echo "Gagné !<br>";
+    $_SESSION['cptJoueur']++;
   }
+  $_SESSION['tour']++;
+}
 ?>
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Pierre-Feuille-Ciseaux</title>
-  <script>
-    function sendChoice(choice) {
-      fetch('index.php', {
-        method: 'POST',
-        body: new URLSearchParams({
-          'choix': choice
-        })
-      });
-    }
-  </script>
-</head>
-<body>
-  <h1>Pierre-Feuille-Ciseaux</h1>
-  <p>Choisissez votre coup :</p>
-  <form>
-    <img src="pierre.png" alt="Pierre" width="100" onclick="sendChoice('Pierre')">
-    <img src="feuille.png" alt="Feuille" width="100" onclick="sendChoice('Feuille')">
-    <img src="ciseaux.png" alt="Ciseaux" width="100" onclick="sendChoice('Ciseaux')">
-  </form>
-  <br>
-  <h3>Résultats :</h3>
-  <p>Nombre de victoires : <?php echo $_SESSION['cptJoueur'] ?></p>
-  <p>Nombre de défaites : <?php echo $_SESSION['cptOrdi'] ?></p>
-  <p>Nombre d'égalités : <?php echo $_SESSION['cptEgalite'] ?></p>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Jeu pierre feuille ciseaux</title>
+  </head>
+  <body>
+    <div>
+      <p><b>Résultats :</b></p>
+      <p>Nombre de parties jouées : <?php echo ($turn - 1); ?></p>
+      <p>Nombre de victoires : <?php echo $_SESSION['cptJoueur']; ?></p>
+      <p>Nombre de défaites : <?php echo $_SESSION['cptOrdi']; ?></p>
+      <p>Nombre d'égalités : <?php echo $_SESSION['cptEgalite']; ?></p>
+    </div>
+
+    <form method="POST">
+      <p><b>Votre choix :</b></p>
+      <div>
+        <input type="radio" id="pierre" name="choix" value="Pierre">
+        <label for="pierre"><img src="pierre.png"></label>
+      </div>
+      <div>
+        <input type="radio" id="feuille" name="choix" value="Feuille">
+        <label for="feuille"><img src="feuille.png"></label>
+      </div>
+      <div>
+        <input type="radio" id="ciseaux" name="choix" value="Ciseaux">
+        <label for="ciseaux"><img src="ciseaux.png"></label>
+      </div>
+      <button type="submit">Jouer</button>
+    </form>
+
+    <p><b>Règles :</b> Pierre bat ciseaux, feuille bat pierre et ciseaux bat feuille. Bonne chance !</p>
+  </body>
 </html>
