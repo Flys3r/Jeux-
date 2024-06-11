@@ -1,5 +1,4 @@
-# Jeux-
-Marlcdown :
+# Shifumi
 
 # Présentation du projet Shifumi # 
 
